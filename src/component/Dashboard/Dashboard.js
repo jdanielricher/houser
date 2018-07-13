@@ -4,16 +4,26 @@ import House from '../House/House';
 class Dashboard extends Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            listOfHouses: ''
+        };
+
+
+        handleClick = () =>
+            console.log('It works', this);
     }
 
     render() {
-        return (
-            <div> Dashboard
+        let loh = listOfHouses.map((e, i) => {
+            return (
+                <div> Dashboard
                 <House />
-            </div>
-        );
+                    <button placeholder="Add New Property"
+                        onClick={this.handleClick} />
+                </div>
+            );
+        })
     }
-}
 
-export default Dashboard;
+
+    export default Dashboard;

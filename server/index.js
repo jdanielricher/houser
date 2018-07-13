@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const massive = require("massive");
 const controller = require('./controller');
-// const axios = require("axios");
+const axios = require("axios");
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,6 +14,12 @@ massive(process.env.CONNECTION_STRING)
     .catch(err => {
         console.log(err);
     });
+
+
+
+
+
+
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
