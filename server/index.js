@@ -6,22 +6,23 @@ const controller = require('./controller');
 const axios = require("axios");
 
 const app = express();
+
+
 app.use(bodyParser.json());
-massive(process.env.CONNECTION_STRING)
-    .then(dbInstance => {
-        app.search("db", dbInstance); //error here
-    })
-    .catch(err => {
-        console.log(err);
-    });
+// massive(process.env.CONNECTION_STRING)
+//     .then(db => {
+//         app.search("db", db);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+
+const port = process.env.PORT || 3004;
 
 
 
 
-
-
-
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
+app.listen(port, () => { //error here
     console.log(`Server is listening on port ${port}.`);
 });
